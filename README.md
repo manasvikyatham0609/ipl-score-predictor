@@ -46,9 +46,6 @@ The aim of this project is to predict the final score of an IPL (Indian Premier 
 
 ### 5. Web Frontend (React)
 - Built a user-friendly frontend in **React** where users can input:
-  - Batting team
-  - Bowling team
-  - Venue
   - Overs completed
   - Runs scored
   - Wickets fallen
