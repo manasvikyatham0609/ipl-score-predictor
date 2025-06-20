@@ -52,7 +52,7 @@ The aim of this project is to predict the final score of an IPL (Indian Premier 
 - Serves the ML model through a **REST API**.
 - Receives inputs from the frontend, processes them using the same pipeline as training, and returns the predicted score.
 - Endpoints:
-  - `POST /predict` — returns the predicted final score in JSON format.
+  - `POST /predict` — returns the predicted final score .
 
 ---
 
