@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # === Step 1: Load Data ===
-df = pd.read_csv('ipl_processed_data.csv')
+df = pd.read_csv("data/ipl_processed_data.csv")
 
 # Remove any missing data
 df.dropna(inplace=True)
@@ -45,5 +45,5 @@ plt.grid(True)
 plt.show()
 
 # === Step 8: Save the Trained Model ===
-joblib.dump(model, 'ipl_score_predictor_model.pkl')
+model = joblib.load('/backend/ipl_best_model_xgb.pkl')
 print("✅ Model saved as 'ipl_score_predictor_model.pkl'")
