@@ -26,9 +26,9 @@ The aim of this project is to predict the final score of an IPL (Indian Premier 
 ### 3. Model Training
 - Split the dataset into training and testing sets.
 - Trained multiple regression models to predict the final score of an innings:
-  - **Linear Regression** — RMSE: * 18.56 (11.71%)*
+  - **Linear Regression** — RMSE: * 18.63 (11.70%)*
   - **Random Forest Regressor** — RMSE: * 19.99 (12.38%)*
-  - **XGBoost Regressor** — RMSE: *18.84 (11.67%)* *(Best Performing Model)*
+  - **XGBoost Regressor** — RMSE: *18.56 (11.67%)* *(Best Performing Model)*
 - Evaluated the models using **Root Mean Squared Error (RMSE)** and expressed it also as a **percentage of the average final score**.
 
 ---
