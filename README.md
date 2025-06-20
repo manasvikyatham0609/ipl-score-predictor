@@ -20,7 +20,6 @@ The aim of this project is to predict the final score of an IPL (Indian Premier 
   - **Wickets fallen**
   - **Overs completed**
   - **Balls remaining**
-- Encoded categorical variables using One-Hot Encoding and Label Encoding for model compatibility.
 
 ---
 
