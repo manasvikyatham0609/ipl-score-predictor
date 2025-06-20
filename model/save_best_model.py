@@ -6,7 +6,7 @@ import os
 import shutil
 
 # ✅ This dataset MUST be the updated one with full innings
-df = pd.read_csv("ipl_processed_data.csv")
+df = pd.read_csv("data/ipl_processed_data.csv")
 df.dropna(inplace=True)
 
 X = df[['runs', 'wickets', 'overs']]
@@ -24,7 +24,7 @@ joblib.dump(model, model_filename)
 print(f"✅ Trained and saved model to '{model_filename}'")
 
 # Define destination
-destination = os.path.join("..", "backend", model_filename)
+destination = os.path.join("backend", model_filename)
 
 # Create backend folder if it doesn't exist
 os.makedirs(os.path.dirname(destination), exist_ok=True)
