@@ -1,62 +1,91 @@
-# 🏏 IPL Score Predictor
+# IPL_Score_Predictor
 
-A machine learning-powered web app that predicts the final score of an IPL innings based on live match inputs: runs, wickets, and overs.
-
----
-
-## 🚀 Tech Stack
-
-| Layer     | Tech                      |
-|-----------|---------------------------|
-| Frontend  | React + Tailwind CSS      |
-| Backend   | Flask           |
-| ML        | Python, pandas, scikit-learn, xgboost |
-| Data      | IPL (2008–2020) ball-by-ball Kaggle dataset |
+The aim of this project is to predict the final score of an IPL (Indian Premier League) innings using machine learning techniques, given partial match information such as overs completed, current score, wickets fallen, and other contextual features.
 
 ---
 
-## 📂 Folder Structure
+## Steps involved in this project are as follows:
 
-ipl-score-predictor/
-├── backend/ ← Flask API + model
-├── frontend/ ← React UI
-├── model/ ← Data prep + training scripts
-├── data/ ← Raw and processed CSVs
-├── README.md
-├── .gitignore
+### 1. Data Preprocessing
+- Loaded the IPL ball-by-ball dataset containing information for each delivery.
+- Filtered relevant columns such as match ID, batsman, bowler, runs scored, overs, wickets, etc.
+- Removed null values and ensured consistency in data types.
+- Aggregated ball-level data to over-level and innings-level formats for modeling.
 
 ---
 
-## 💡 Features
-
-- Predicts final score based on:
-  - 🏃 Runs Scored
-  - 💥 Wickets Fallen
-  - ⏱️ Overs Completed
-- React UI with live input
-- Trained on real IPL data
-
----
-
-## 📈 Model Evaluation
-
-| Metric             | Value         |
-|--------------------|---------------|
-| MAE (Mean Error)   | ~14.19 runs     |
-| R² Score           | ~0.53         |
+### 2. Feature Engineering
+- Extracted several important features such as:
+  - **Current Score** (till a given over)
+  - **Wickets fallen**
+  - **Overs completed**
+  - **Batting team**
+  - **Bowling team**
+  - **Venue**
+  - **Run rate**
+  - **Balls remaining**
+- Encoded categorical variables using One-Hot Encoding and Label Encoding for model compatibility.
 
 ---
 
-## 🛠 How to Run Locally
+### 3. Model Training
+- Split the dataset into training and testing sets.
+- Trained multiple regression models to predict the final score of an innings:
+  - **Linear Regression** — RMSE: *xx*
+  - **Random Forest Regressor** — RMSE: *xx*
+  - **XGBoost Regressor** — RMSE: *xx* *(Best Performing Model)*
+- Evaluated the models using **Root Mean Squared Error (RMSE)** and expressed it also as a **percentage of the average final score**.
 
-### 🧠 Backend (Flask)
-```bash
-cd backend
-pip install -r requirements.txt
-python app.py
+---
 
-🌐 Frontend (React)
+### 4. Model Saving
+- The best model (XGBoost) was saved using joblib/pickle for reuse in the Flask backend.
+- Stored as `best_model.pkl` under the `model/` directory.
 
-cd frontend
-npm install
-npm start
+---
+
+### 5. Web Frontend (React)
+- Built a user-friendly frontend in **React** where users can input:
+  - Batting team
+  - Bowling team
+  - Venue
+  - Overs completed
+  - Runs scored
+  - Wickets fallen
+- On form submission, a request is sent to the Flask backend, and the predicted final score is shown.
+
+---
+
+### 6. Flask Backend
+- Serves the ML model through a **REST API**.
+- Receives inputs from the frontend, processes them using the same pipeline as training, and returns the predicted score.
+- Endpoints:
+  - `POST /predict` — returns the predicted final score in JSON format.
+
+---
+
+## CONCLUSION
+We have implemented multiple ML models to predict the final score of an IPL innings using minimal match information. The **XGBoost Regressor** provided the most accurate results based on our evaluation metrics. Future work can include:
+- Player-specific stats (batsman/bowler form)
+- Powerplay and death overs effects
+- Match pressure situations and run chase modeling
+
+---
+
+## About
+Machine Learning + React + Flask project to build a complete web app for real-time IPL score prediction.
+
+---
+
+## Resources
+📂 `/data` — Processed CSV files  
+📂 `/model` — Trained ML model  
+📂 `/frontend` — React App  
+📂 `/backend` — Flask App
+
+---
+
+## Languages
+- Python (Scikit-learn, XGBoost, Pandas)
+- JavaScript (React)
+- HTML/CSS
