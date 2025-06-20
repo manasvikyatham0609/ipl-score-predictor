@@ -35,7 +35,6 @@ ipl-score-predictor/
   - ⏱️ Overs Completed
 - React UI with live input
 - Trained on real IPL data
-- Model accuracy evaluated
 
 ---
 
