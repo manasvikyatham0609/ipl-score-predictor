@@ -1,8 +1,8 @@
 import pandas as pd
 
 # Load CSV files
-deliveries = pd.read_csv('deliveries.csv')
-matches = pd.read_csv('matches.csv')
+deliveries = pd.read_csv('data/deliveries.csv')
+matches = pd.read_csv('data/matches.csv')
 
 # Add a new column 'inning_id' for grouping
 deliveries['inning_id'] = deliveries['match_id'].astype(str) + '-' + deliveries['inning'].astype(str)
@@ -41,5 +41,5 @@ for checkpoint in checkpoints:
         })
 
 df_features = pd.DataFrame(features)
-df_features.to_csv('ipl_processed_data.csv', index=False)
+df_features.to_csv('data/ipl_processed_data.csv', index=False)
 print("✅ Processed data saved to 'ipl_processed_data.csv'")
