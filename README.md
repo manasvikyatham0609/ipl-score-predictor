@@ -9,7 +9,7 @@ A machine learning-powered web app that predicts the final score of an IPL innin
 | Layer     | Tech                      |
 |-----------|---------------------------|
 | Frontend  | React + Tailwind CSS      |
-| Backend   | Flask + XGBoost           |
+| Backend   | Flask           |
 | ML        | Python, pandas, scikit-learn, xgboost |
 | Data      | IPL (2008–2020) ball-by-ball Kaggle dataset |
 
