@@ -8,7 +8,7 @@ import os
 import numpy as np
 
 # === Step 1: Load Processed Data ===
-df = pd.read_csv("ipl_processed_data.csv")
+df = pd.read_csv("data/ipl_processed_data.csv")
 df.dropna(inplace=True)
 
 # === Step 2: Features and Target ===
