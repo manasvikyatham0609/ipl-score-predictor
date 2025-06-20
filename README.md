@@ -19,10 +19,6 @@ The aim of this project is to predict the final score of an IPL (Indian Premier 
   - **Current Score** (till a given over)
   - **Wickets fallen**
   - **Overs completed**
-  - **Batting team**
-  - **Bowling team**
-  - **Venue**
-  - **Run rate**
   - **Balls remaining**
 - Encoded categorical variables using One-Hot Encoding and Label Encoding for model compatibility.
 
