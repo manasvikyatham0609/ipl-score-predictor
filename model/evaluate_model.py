@@ -6,6 +6,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 import numpy as np
+from sklearn.metrics import mean_squared_error
+
+
 
 # === Step 1: Load Processed Data ===
 df = pd.read_csv("data/ipl_processed_data.csv")
@@ -49,4 +52,9 @@ tolerance = 10
 accurate_predictions = np.abs(y_test - y_pred) <= tolerance
 accuracy = np.mean(accurate_predictions) * 100
 print(f"\U0001F389 Custom Accuracy (±{tolerance} runs): {accuracy:.2f}%")
+
+mse = mean_squared_error(y_test, y_pred)
+rmse = np.sqrt(mse)
+print(f"📐 Root Mean Squared Error (RMSE): {rmse:.2f} runs")
+
 
